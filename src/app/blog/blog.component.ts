@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-blog',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  blogPosts: Object;
+  blogId: number;
+
+  constructor(private data: DataService) { }
 
   ngOnInit() {
+      this.data.getBlogs().subscribe(blogs => {
+        this.blogPosts = blogs
+        this.blogId = 1;
+      })
   }
 
 }
