@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from '../data.service';
 
 @Component({
@@ -13,11 +13,15 @@ export class BlogComponent implements OnInit {
 
   constructor(private data: DataService) { }
 
+  ngOnChanges() {
+
+  }
+
   ngOnInit() {
-      this.data.getBlogs().subscribe(blogs => {
-        this.blogPosts = blogs
-        this.blogId = 1;
-      })
+    this.data.getBlogs().subscribe(blogs => {
+      this.blogPosts = blogs
+      this.blogId = this.data.getBlogId();
+    })
   }
 
 }
