@@ -1,9 +1,11 @@
 <section *ngIf="blogPosts">
 
-    <h1>{{ blogPosts[blogId].name }}</h1>
-    <h3>{{ blogPosts[blogId].location }}</h3>
-    <p>{{ blogPosts[blogId].entry1 }}</p>
-    <p>{{ blogPosts[blogId].entry2 }}</p>
+    <div class="simpleDiv">
+        <h1 class="simpleHeader">{{ blogPosts[blogId].name }}</h1>
+        <h5 class="simpleHeader">{{ blogPosts[blogId].location }}</h5>
+        <p class="simpleParagraph">{{ blogPosts[blogId].entry1 }}</p>
+        <p class="simpleParagraph">{{ blogPosts[blogId].entry2 }}</p>
+    </div>
 
 
 </section>
